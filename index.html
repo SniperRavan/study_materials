@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StudyVibe - BPEI Global Foundation</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-main">📚 StudyVibe</div>
+            <div class="logo-subtitle">BPEI Global Foundation - Learning Hub</div>
+        </div>
+        <button class="admin-toggle clickable">⚙️ Admin Panel</button>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number" id="totalMaterials">247</div>
+            <div class="stat-label">Study Materials</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="totalViews">15,432</div>
+            <div class="stat-label">Total Views</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="lastUpdate">Today</div>
+            <div class="stat-label">Last Updated</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="activeUsers">89</div>
+            <div class="stat-label">Active Users</div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="search-container">
+            <h2 class="search-title">🔍 Find Your Study Materials</h2>
+            <input type="text" id="searchBox" class="search-box" placeholder="Search subjects, streams, or resources..." />
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active clickable" data-year="1">🎓 1st Year</button>
+            <button class="nav-tab clickable" data-year="2">📚 2nd Year</button>
+            <button class="nav-tab clickable" data-year="3">🚀 3rd Year</button>
+        </div>
+
+        <div id="streamsContainer" class="streams-container">
+            <!-- Dynamic content here -->
+        </div>
+    </main>
+
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-content">
+            <button class="close-admin clickable">&times;</button>
+            <h2 class="admin-title">🔧 Admin Control Panel</h2>
+            <form id="adminForm" class="admin-form">
+                <div class="form-group">
+                    <label>📅 Academic Year:</label>
+                    <select id="adminYear" required>
+                        <option value="">Select Year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>🏗️ Engineering Stream:</label>
+                    <select id="adminStream" required>
+                        <option value="">Select Stream</option>
+                        <option value="mechanical">⚙️ Mechanical Engineering</option>
+                        <option value="civil">🏗️ Civil Engineering</option>
+                        <option value="cse">💻 Computer Science</option>
+                        <option value="electrical">⚡ Electrical Engineering</option>
+                        <option value="etc">📡 Electronics & Telecom</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>📖 Subject Name:</label>
+                    <input type="text" id="adminSubject" placeholder="e.g., Engineering Mathematics" required />
+                </div>
+                <div class="form-group">
+                    <label>📋 Resource Type:</label>
+                    <select id="adminResourceType" required>
+                        <option value="">Select Type</option>
+                        <option value="pdf">📄 PDF Document</option>
+                        <option value="youtube">📺 YouTube Video</option>
+                        <option value="website">🌐 Website Link</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>📝 Resource Title:</label>
+                    <input type="text" id="adminResourceTitle" placeholder="Enter descriptive title" required />
+                </div>
+                <div class="form-group" id="fileUploadGroup">
+                    <label>📤 Upload PDF File:</label>
+                    <input type="file" id="adminFile" accept=".pdf" />
+                </div>
+                <div class="form-group" id="linkGroup" style="display: none;">
+                    <label>🔗 Resource URL:</label>
+                    <input type="url" id="adminUrl" placeholder="https://example.com" />
+                </div>
+                <div class="form-group" style="grid-column: 1 / -1;">
+                    <label>📄 Description (Optional):</label>
+                    <textarea id="adminDescription" placeholder="Brief description of the resource" rows="3"></textarea>
+                </div>
+                <button type="submit" class="save-btn clickable">💾 Save Resource</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
